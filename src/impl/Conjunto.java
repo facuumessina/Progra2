@@ -4,39 +4,54 @@ import tda.ConjuntoTDA;
 
 public class Conjunto implements ConjuntoTDA {
 
+	int[] arr;
+	int indice;
+	
 	@Override
 	public void inicializarConjunto() {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void agregar(int x) {
-		// TODO Auto-generated method stub
+		if(!this.pertenece(x)) {
+			arr[indice] = x;
+			indice++;
+		}
 
 	}
 
 	@Override
 	public void sacar(int x) {
-		// TODO Auto-generated method stub
-
-	}
+		int i = 0;// constante
+		while(i<indice && arr[i] != x) {
+			i++; //constante
+		}// lineal
+		if(i != indice) { //x pertenece al conjunto lo encontramos
+			arr[i] = arr[indice-1];
+			indice--;
+		}//constante
+	}// constante + lineal + constante = (nos quedamos con el peor) --> lineal
 
 	@Override
 	public int elegir() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
 	@Override
 	public boolean pertenece(int x) {
-		// TODO Auto-generated method stub
-		return false;
+		int i = 0;
+		while(i<indice && arr[i] != x) {
+			i++;
+		}
+		return (i != indice);
 	}
 
 	@Override
 	public boolean conjuntoVacio() {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
