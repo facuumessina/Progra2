@@ -14,7 +14,8 @@ public class ColaPrioridad implements ColaPrioridadTDA {
 
 	@Override
 	public void inicializarCola() {
-		// TODO Auto-generated method stub
+		indice = 0;
+		arr = new Elemento[100];
 
 	}
 
@@ -35,26 +36,25 @@ public class ColaPrioridad implements ColaPrioridadTDA {
 
 	@Override
 	public void desacolar() {
-		indice--;
 		arr[indice-1] = null;
+		indice--;
 
 	}
 
 	@Override
 	public int primero() {
-		// TODO Auto-generated method stub
-		return 0;
+		return arr[indice-1].valor;
 	}
 
 	@Override
+	
 	public int prioridad() {
 		return arr[indice-1].prioridad;
 	}
 
 	@Override
 	public boolean colaVacia() {
-		// TODO Auto-generated method stub
-		return false;
+		return (indice == 0);
 	}
 
 }

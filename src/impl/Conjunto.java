@@ -5,54 +5,52 @@ import tda.ConjuntoTDA;
 public class Conjunto implements ConjuntoTDA {
 
 	int[] arr;
-	int indice;
+	int cant;
 	
 	@Override
 	public void inicializarConjunto() {
-		
+		arr = new int [100];
+		cant = 0;
 
 	}
 
 	@Override
 	public void agregar(int x) {
 		if(!this.pertenece(x)) {
-			arr[indice] = x;
-			indice++;
+			arr[cant] = x;
+			cant++;
 		}
-
 	}
 
 	@Override
 	public void sacar(int x) {
 		int i = 0;// constante
-		while(i<indice && arr[i] != x) {
+		while(i<cant && arr[i] != x) {
 			i++; //constante
 		}// lineal
-		if(i != indice) { //x pertenece al conjunto lo encontramos
-			arr[i] = arr[indice-1];
-			indice--;
+		if(i != cant) { //x pertenece al conjunto lo encontramos
+			arr[i] = arr[cant-1];
+			cant--;
 		}//constante
 	}// constante + lineal + constante = (nos quedamos con el peor) --> lineal
 
 	@Override
 	public int elegir() {
-		
-		return 0;
+		return arr[cant-1];
 	}
 
 	@Override
 	public boolean pertenece(int x) {
 		int i = 0;
-		while(i<indice && arr[i] != x) {
+		while(i<cant && arr[i] != x) {
 			i++;
 		}
-		return (i != indice);
+		return (i != cant);
 	}
 
 	@Override
 	public boolean conjuntoVacio() {
-		
-		return false;
+		return cant == 0;
 	}
 
 }

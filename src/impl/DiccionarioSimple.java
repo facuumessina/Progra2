@@ -12,11 +12,12 @@ public class DiccionarioSimple implements DiccionarioSimpleTDA {
 	
 	private Elemento[] arr;
 	private int indice;
+	int cant;
 	
 	@Override
 	public void inicializarDiccionario() {
-		// TODO Auto-generated method stub
-
+		arr = new Elemento [100];
+		cant = 0;
 	}
 	
 	private int clave2Indice(int cl) {
@@ -58,7 +59,8 @@ public class DiccionarioSimple implements DiccionarioSimpleTDA {
 
 	@Override
 	public int recuperar(int clave) { //muy sencillo
-		return 0;
+		int pos = clave2Indice(clave);
+		return arr[pos].valor;
 
 	}
 
@@ -66,7 +68,13 @@ public class DiccionarioSimple implements DiccionarioSimpleTDA {
 	public ConjuntoTDA claves() {
 		// declarar un conjunto, inicializarlo, una vez inicializado, recorrer el arreglo con un for desde 0 a -1 o viceversa
 		// agarra clave y la mete al conjunto, devuelve el conjunto completado con claves
-		return null;
+		
+		ConjuntoTDA c = new Conjunto();
+		c.inicializarConjunto();
+		for(int i = 0; i < cant; i++) {
+			c.agregar(arr[i].clave);
+		}
+		return c;
 	}
 
 }

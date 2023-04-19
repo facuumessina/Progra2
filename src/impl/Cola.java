@@ -4,39 +4,41 @@ import tda.ColaTDA;
 
 public class Cola implements ColaTDA {
 
+	int[] arr;
+	int indice;
+	
 	@Override
 	public void inicializarCola() {
-		// TODO Auto-generated method stub
+		arr = new int [100];
+		indice = 0;
 
 	}
 
 	@Override
 	public void acolar(int dato) {
-		// TODO Auto-generated method stub
+		for (int i = indice -1; i >= 0; i--) {
+			arr[i+1] = arr[i];
+			arr[0] = dato;
+			indice++;
+		}
 
 	}
 
 	@Override
 	public void desacolar() {
-		// TODO Auto-generated method stub
+		indice--;
 
 	}
 
 	@Override
 	public boolean colaVacia() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return (indice == 0);
 	}
 
 	@Override
 	public int primero() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		return arr[indice-1];
 	}
 
 }

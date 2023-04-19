@@ -24,7 +24,8 @@ public class DiccionarioMultiple implements DiccionarioMultipleTDA {
 	
 	@Override
 	public void inicializarDiccionario() {
-		// TODO Auto-generated method stub
+		elementos = new Elemento[100];
+		cantClaves = 0;
 
 	}
 
@@ -60,7 +61,15 @@ public class DiccionarioMultiple implements DiccionarioMultipleTDA {
 
 	@Override
 	public void eliminar(int clave) {
-		// TODO Auto-generated method stub
+		int pos = clave2Indice(clave);
+		if (pos != -1) {// la clave existe
+			elementos[pos] = elementos[cantClaves-1]; //ToDo (tener cuidado ya que estamos igualando referencias)
+			// arr[indice-1] = null;
+			/*arr[pos].clave = arr[indice-1].clave;
+			 * arr[pos].valor = arr[indice-1].valor;
+			 */
+			cantClaves--;
+		}
 
 	}
 
