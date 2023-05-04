@@ -8,8 +8,10 @@ public class ContarElementosPila {
 		
 		int count = 0;
 		
-		
-		
+		while (!pila.pilaVacia()) {
+			pila.desapilar();
+			count++;
+		}
 		
 		return count;
 		

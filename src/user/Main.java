@@ -16,6 +16,7 @@ public class Main {
 				origen.apilar(3);
 				origen.apilar(4);
 				origen.apilar(5);
+				origen.apilar(9);
 				
 		//////////////////////    TRABAJO PRACTICO 1    ////////////////////////
 		////////////////////// TDA PILAS ACTIVIDAD 2 //////////////////////////
@@ -38,9 +39,15 @@ public class Main {
 				}
 				*/
 				
-		///////////////////////////////    c)    //////////////////////////// (Clonar pila en otra igual)
+		///////////////////////////////    c)    //////////////////////////// (Invertir Pila)
+				
+				// Idem item a //
+				
 		
 		///////////////////////////////    d)    //////////////////////////// (contar elementos de una pila)
+				
+				/*int count = ContarElementosPila.contarPila(origen);
+				System.out.println(count);*/
 				
 		
 		///////////////////////////////    e)    //////////////////////////// (Sumar elementos de una pila)
@@ -48,8 +55,18 @@ public class Main {
 				/*int suma = SumarElementosPila.SumaPila(origen);
 				
 				System.out.println(suma);*/
+				
+		//////////////////////////////    f)    //////////////////////////// (Calcular el promedio)
+				
+				
+				/*
+				float promedio = PromedioPila.PromedioPila(origen);
+				System.out.println(promedio);
+				*/
 		
-		
+	   //////////////////////TDA COLAS ACTIVIDAD 4 //////////////////////////
+				
+				
 				
 				
 	}
