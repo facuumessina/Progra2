@@ -16,11 +16,11 @@ public class Cola implements ColaTDA {
 
 	@Override
 	public void acolar(int dato) {
-		for (int i = indice -1; i >= 0; i--) {
+		for (int i = indice; i >= 0; i--) {
 			arr[i+1] = arr[i];
-			arr[0] = dato;
-			indice++;
 		}
+		arr[0] = dato;
+		indice++;
 
 	}
 
@@ -32,7 +32,6 @@ public class Cola implements ColaTDA {
 
 	@Override
 	public boolean colaVacia() {
-		
 		return (indice == 0);
 	}
 
