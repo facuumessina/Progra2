@@ -2,8 +2,9 @@ package user;
 
 import impl.Pila;
 import tda.PilaTDA;
-import tda.ColaTDA;
-import impl.Cola;
+import impl.ColaPrioridad;
+import tda.ColaPrioridadTDA;
+
 
 public class Main {
 	
@@ -20,14 +21,38 @@ public class Main {
 				origen.apilar(5);
 				origen.apilar(9);
 				
-				ColaTDA cola = new Cola();
+				/*ColaTDA cola = new Cola();
 				cola.inicializarCola();
 				cola.acolar(4);
 				cola.acolar(8);
-				cola.acolar(4);
-				cola.acolar(8);
-				cola.acolar(4);
+				cola.acolar(12);
+				cola.acolar(16);
+				cola.acolar(20);
 				
+				ColaTDA colainv = new Cola();
+				colainv.inicializarCola();
+				colainv.acolar(20);
+				colainv.acolar(16);
+				colainv.acolar(12);
+				colainv.acolar(8);
+				colainv.acolar(4);
+				*/
+				
+				ColaPrioridadTDA cp1 = new ColaPrioridad();
+				cp1.inicializarCola();
+				cp1.acolarPrioridad(20,1);
+				cp1.acolarPrioridad(16,2);
+				cp1.acolarPrioridad(12,3);
+				cp1.acolarPrioridad(8,5);
+				cp1.acolarPrioridad(4,6);
+				
+				ColaPrioridadTDA cp2 = new ColaPrioridad();
+				cp2.inicializarCola();
+				cp2.acolarPrioridad(20,7);
+				cp2.acolarPrioridad(16,3);
+				cp2.acolarPrioridad(12,2);
+				cp2.acolarPrioridad(8,8);
+				cp2.acolarPrioridad(4,10);
 				
 		//////////////////////    TRABAJO PRACTICO 1    ////////////////////////
 		////////////////////// TDA PILAS ACTIVIDAD 2 //////////////////////////
@@ -118,7 +143,18 @@ public class Main {
 				
 		///////////////////////////////    c)    //////////////////////////// (Invertir el contenido de una cola - sin aux)
 	
-
+			/*	
+				ColaTDA inv = new Cola();
+				inv.inicializarCola();
+				inv = InvertirCola.InvertirCola(cola);
+			
+				while(!inv.colaVacia()) {
+					System.out.println(inv.primero());
+					inv.desacolar();
+				}
+				
+			*/
+				
 		///////////////////////////////    d)    //////////////////////////// (final cola C1 = final cola C2)
 				
 				
@@ -139,10 +175,40 @@ public class Main {
 	
 	   //////////////////////////////    f)    //////////////////////////// (C1 es inversa a C2)
 				
-			
+				/*boolean inv = ColaEsInversa.EsInversa(cola, colainv);
+				
+				if(inv != true) {
+					System.out.println("Las colas no son inversas");
+				}else {
+					System.out.println("Las colas ingresadas son inversas");
+				}
+				*/
+				
+	   //////////////////////TDA COLAS CON PRIORIDAD ACTIVIDAD 5  //////////////////////////
+		
+	  ///////////////////////////////    b)    //////////////////////////// (Combinar dos colas con prioridad)
+				
+				/*
+				ColaPrioridadTDA comb = new ColaPrioridad();
+				comb.inicializarCola();
+				
+				comb = CombinarColas.CombinarColasConPri(cp1,cp2);
+				
+				while(!comb.colaVacia()) {
+					System.out.println(comb.primero() + " / " + comb.prioridad());
+					comb.desacolar();
+				}
+				*/
+				
+		////////////////////// TRABAJO PRACTICO 3    ////////////////////////
+		////////////////////// TDA CONJUNTO ACTIVIDAD 3 /////////////////////////
+				
+		
+		//////////////////////TDA DICCIONARIO ACTIVIDAD 4 ///////////////////////
 				
 				
-
+		
+		
 	}
 
 }

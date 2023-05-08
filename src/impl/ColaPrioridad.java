@@ -28,6 +28,7 @@ public class ColaPrioridad implements ColaPrioridadTDA {
 			arr[i].prioridad = arr[i-1].prioridad;
 			i--;
 		}
+		arr[i] = new Elemento();
 		arr[i].valor = dato;
 		arr[i].prioridad = prio;
 		indice++;
